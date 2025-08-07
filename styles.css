@@ -148,6 +148,37 @@ section h2:hover {
   height: auto;
   display: block;
 }
+
+.split {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.split-image,
+.split-content {
+  flex: 1;
+}
+.split-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: block;
+}
+.signature {
+  margin-top: 1rem;
+  font-style: italic;
+}
+.caption {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--steel);
+  margin-top: 0.5rem;
+}
+figure {
+  margin: 0;
+}
 .reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -193,6 +224,9 @@ footer {
 @media (max-width: 768px) {
   section {
     padding: 3rem 1rem;
+  }
+  .split {
+    flex-direction: column;
   }
 }
 @media (max-width: 480px) {
