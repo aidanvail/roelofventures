@@ -89,10 +89,6 @@
       height: auto;
       display: block;
     }
-    .project-card h3 {
-      font-size: 1rem;
-      padding: 0.5rem;
-    }
     @media (min-width: 1024px) {
       .projects-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -285,12 +281,8 @@
       card.className = 'project-card';
       const img = document.createElement('img');
       img.src = file;
-      const titleText = file.replace(/\.[^/.]+$/, '');
-      img.alt = titleText;
-      const title = document.createElement('h3');
-      title.textContent = titleText;
+      img.alt = file.replace(/\.[^/.]+$/, '');
       card.appendChild(img);
-      card.appendChild(title);
       projectsGrid.appendChild(card);
     });
   </script>
