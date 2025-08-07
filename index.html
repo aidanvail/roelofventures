@@ -4,131 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roelof Ventures | Master Building with Purpose</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
+    :root {
+      --charcoal: #333333;
+      --steel: #555555;
+      --light-brown: #c19a6b;
+      --white: #ffffff;
+    }
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      color: #333;
-      background: #fff;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
       line-height: 1.6;
     }
-    header {
-      background: linear-gradient(to right, #555, #222);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    header h1 {
+    h1, h2, h3 {
       font-family: 'Montserrat', sans-serif;
+      color: var(--charcoal);
+      margin-bottom: 1rem;
+    }
+    header.hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, var(--steel), var(--charcoal));
+      color: var(--white);
+      padding: 0 1rem;
+    }
+    .hero h1 {
       font-size: 2.5rem;
-      margin-bottom: 10px;
     }
-    header p {
+    .hero p {
       font-size: 1.2rem;
-      margin-bottom: 30px;
+      margin-bottom: 2rem;
     }
-    header a {
-      display: inline-block;
-      background: #c19a6b;
-      color: white;
-      padding: 12px 24px;
+    .btn {
+      background: var(--light-brown);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
+      border-radius: 4px;
+      font-weight: 600;
     }
-
     section {
-      padding: 60px 20px;
+      padding: 4rem 1rem;
       max-width: 1100px;
       margin: auto;
     }
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      color: #222;
-      margin-bottom: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
     .quote {
       font-style: italic;
-      margin-top: 20px;
-      color: #555;
+      margin-top: 1rem;
+      color: var(--steel);
     }
-
-    .project {
-      background: #f9f9f9;
-      padding: 20px;
-      border-left: 5px solid #c19a6b;
-    }
-
-    footer {
-      background: #222;
-      color: white;
+    .expertise-grid,
+    .projects-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       text-align: center;
-      padding: 40px 20px;
     }
-
+    .project-item {
+      background: #f7f7f7;
+      padding: 1rem;
+      border-left: 4px solid var(--light-brown);
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    footer {
+      background: var(--charcoal);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
     @media (max-width: 768px) {
-      header h1 {
+      .hero h1 {
         font-size: 2rem;
       }
-      header p {
+      section {
+        padding: 3rem 1rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+      .hero p {
         font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-
-  <header>
+  <header class="hero">
     <h1>Roelof Ventures</h1>
     <p>Master Building with Purpose</p>
-    <a href="#contact">Let's Build</a>
+    <a href="#contact" class="btn">Let's Build</a>
   </header>
 
   <section id="about">
     <h2>About Roelof Venter</h2>
-    <p>With over 28 years of hands-on experience in the construction industry, Roelof Venter is the cornerstone of Roelof Ventures. Known for treating each project as a monument, Roelof approaches construction with passion, precision, and professionalism.</p>
+    <p>
+      With over 28 years of hands-on experience in the construction industry,
+      Roelof Venter is the cornerstone of Roelof Ventures. Known for treating
+      each project as a monument, Roelof approaches construction with passion,
+      precision, and professionalism.
+    </p>
     <p class="quote">“We don’t just build. We build visions.”</p>
   </section>
 
   <section id="expertise">
-    <h2>Our Expertise</h2>
-    <div class="grid">
+    <h2>Expertise</h2>
+    <div class="expertise-grid">
       <div><strong>Commercial Projects</strong><br>Shopping Centres, Hotels, Office Blocks</div>
-      <div><strong>Residential Projects</strong><br>Lifestyle Estates, Flats, Renovations</div>
+      <div><strong>Residential Projects</strong><br>Lifestyle Estates, Homes, Renovations</div>
       <div><strong>Civil Works</strong><br>Infrastructure, Refurbishments</div>
     </div>
   </section>
 
   <section id="services">
-    <h2>Our Services</h2>
+    <h2>Services</h2>
     <ul>
-      <li><strong>Project Management:</strong> Budget control, contractor appointment, timeline management, site meetings</li>
-      <li><strong>Costing & BOQ:</strong> m² rate or inclusive assessment with transparency</li>
-      <li><strong>Kitchens & BICs:</strong> Work with Boffi, Euro Casa, and local suppliers with optional 3D rendering</li>
+      <li><strong>Project Management:</strong> budgeting, contractor appointment, scheduling, meetings</li>
+      <li><strong>Costing & BOQ Assessment</strong></li>
+      <li><strong>Kitchens and BICs:</strong> Boffi, Euro Casa, local suppliers, 3D rendering</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Featured Projects</h2>
-    <div class="grid">
-      <div class="project">Wonderboom Junction</div>
-      <div class="project">Lord Charles – Brooklyn, Pretoria</div>
-      <div class="project">Radisson Hotel – Johannesburg</div>
-      <div class="project">Malkerns – Eswatini</div>
-      <div class="project">Beyls Bridge</div>
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-item">Wonderboom Junction</div>
+      <div class="project-item">Lord Charles (Brooklyn, Pretoria)</div>
+      <div class="project-item">Radisson Hotel (JHB)</div>
+      <div class="project-item">Malkerns (Eswatini)</div>
+      <div class="project-item">Beyls Bridge</div>
     </div>
   </section>
 
   <section id="values">
-    <h2>Our Philosophy</h2>
-    <p>At Roelof Ventures, we believe in ownership, collaboration, and the unique value of every build. Each team member is accountable, timelines are respected, and the result is always a one-of-a-kind structure.</p>
+    <h2>Values</h2>
+    <p>
+      We believe in full ownership of every project, open collaboration with all
+      stakeholders, execution that honours timelines, and delivering a unique
+      structure that reflects each client’s vision.
+    </p>
   </section>
 
   <section id="credentials">
@@ -136,22 +164,20 @@
     <ul>
       <li>Technical Construction Management</li>
       <li>Project Management</li>
-      <li>Master Builder Accreditation (Pending)</li>
+      <li>Master Builder Accreditation (pending)</li>
     </ul>
   </section>
 
   <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Ready to bring your vision to life? Let’s schedule a consultation and start creating your next Monument.</p>
-    <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+    <h2>Contact</h2>
+    <p>Ready to bring your vision to life?</p>
+    <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
     <p>Phone: <a href="tel:+27123456789">+27 12 345 6789</a></p>
     <p>Location: Pretoria, South Africa</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Roelof Ventures. Built with pride in South Africa.</p>
+    &copy; 2025 Roelof Ventures. Built with pride in South Africa.
   </footer>
-
 </body>
 </html>
-
