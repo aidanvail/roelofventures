@@ -1,0 +1,236 @@
+:root {
+  --charcoal: #333333;
+  --steel: #555555;
+  --light-brown: #c19a6b;
+  --white: #ffffff;
+}
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--charcoal);
+  background: var(--white);
+  line-height: 1.6;
+}
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+header.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url('construction-silhouette.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+  padding: 0 1rem;
+}
+header.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+.hero img.logo {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+.call-now {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--charcoal);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background 0.3s, color 0.3s;
+}
+.call-now:hover {
+  background: var(--light-brown);
+  color: var(--white);
+}
+.btn {
+  background: var(--light-brown);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+section {
+  padding: 4rem 1rem;
+  max-width: 1100px;
+  margin: auto;
+}
+section:nth-of-type(even) {
+  background: #f7f7f7;
+}
+section h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: color 0.3s;
+}
+section h2:hover {
+  color: var(--light-brown);
+}
+.quote {
+  font-style: italic;
+  margin-top: 1rem;
+  color: var(--steel);
+  text-align: center;
+}
+.expertise-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  text-align: center;
+}
+.expertise-grid div, #services ul li {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.expertise-grid div:hover, #services ul li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.projects-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.project-card {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.split {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.split-image,
+.split-content {
+  flex: 1;
+}
+.split-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: block;
+}
+.signature {
+  margin-top: 1rem;
+  font-style: italic;
+}
+.caption {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--steel);
+  margin-top: 0.5rem;
+}
+figure {
+  margin: 0;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--light-brown);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: none;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+#backToTop:hover {
+  background: var(--charcoal);
+}
+@media (max-width: 600px) {
+  .call-now {
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+  }
+}
+ul {
+  padding-left: 1.2rem;
+}
+footer {
+  background: var(--charcoal);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 1rem;
+  }
+  .split {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .hero p {
+    font-size: 1rem;
+  }
+}
