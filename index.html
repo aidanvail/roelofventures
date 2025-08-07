@@ -5,152 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roelof Ventures | Master Building with Purpose</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --charcoal: #333333;
-      --steel: #555555;
-      --light-brown: #c19a6b;
-      --white: #ffffff;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--charcoal);
-      background: var(--white);
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-    }
-    header.hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-image: url('construction-silhouette.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: var(--white);
-      padding: 0 1rem;
-    }
-    header.hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-    .hero > * {
-      position: relative;
-      z-index: 1;
-    }
-    .hero img.logo {
-      max-width: 200px;
-      width: 100%;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .btn {
-      background: var(--light-brown);
-      color: var(--white);
-      padding: 0.75rem 1.5rem;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: 600;
-    }
-    section {
-      padding: 4rem 1rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-    .quote {
-      font-style: italic;
-      margin-top: 1rem;
-      color: var(--steel);
-    }
-    .expertise-grid {
-      display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      text-align: center;
-    }
-    .projects-grid {
-      display: grid;
-      gap: 2rem;
-    }
-    .project-card {
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      overflow: hidden;
-      text-align: center;
-    }
-    .project-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    @media (min-width: 1024px) {
-      .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-    @media (min-width: 600px) and (max-width: 1023px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 599px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    footer {
-      background: var(--charcoal);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    @media (max-width: 768px) {
-      section {
-        padding: 3rem 1rem;
-      }
-    }
-    @media (max-width: 480px) {
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
-    <img src="logo.png" alt="Roelof Ventures Logo" class="logo" />
+    <a href="tel:+27826499796" class="call-now">📞 +27 82 649 9796</a>
+    <img src="logo.png" alt="Roelof Ventures Logo" class="logo" loading="lazy" />
+    <h1>Roelof Ventures</h1>
     <p>Master Building with Purpose</p>
     <a href="#contact" class="btn">Let's Build</a>
   </header>
 
-  <section id="about">
+  <section id="about" class="reveal">
     <h2>About Roelof Venter</h2>
     <p>
       With over 28 years of hands-on experience in the construction industry,
@@ -161,7 +27,7 @@
     <p class="quote">“We don’t just build. We build visions.”</p>
   </section>
 
-  <section id="expertise">
+  <section id="expertise" class="reveal">
     <h2>Expertise</h2>
     <div class="expertise-grid">
       <div><strong>Commercial Projects</strong><br>Shopping Centres, Hotels, Office Blocks</div>
@@ -170,7 +36,7 @@
     </div>
   </section>
 
-  <section id="services">
+  <section id="services" class="reveal">
     <h2>Services</h2>
     <ul>
       <li><strong>Project Management:</strong> budgeting, contractor appointment, scheduling, meetings</li>
@@ -179,12 +45,13 @@
     </ul>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="reveal">
     <h2>Projects</h2>
     <div class="projects-grid"></div>
+    <button id="loadMore" class="btn">Load More</button>
   </section>
 
-  <section id="values">
+  <section id="values" class="reveal">
     <h2>Values</h2>
     <p>
       We believe in full ownership of every project, open collaboration with all
@@ -193,7 +60,7 @@
     </p>
   </section>
 
-  <section id="credentials">
+  <section id="credentials" class="reveal">
     <h2>Credentials</h2>
     <ul>
       <li>Technical Construction Management</li>
@@ -202,7 +69,7 @@
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="reveal">
     <h2>Contact</h2>
     <p>Ready to bring your vision to life?</p>
     <p>Email: <a href="mailto:info@example.com">info@example.com</a></p>
@@ -213,96 +80,8 @@
   <footer>
     &copy; 2025 Roelof Ventures. Built with pride in South Africa.
   </footer>
-  <script>
-    const projectImages = [
-      '10153796_694718463916681_7341030265989753847_n.jpg',
-      '1049244_540308082695663_630737079_o.jpg',
-      '10525917_740802122627550_7635864426557295463_n.jpg',
-      '1053029_507869422601587_187732591_o.jpg',
-      '10603404_675908629130998_1150541929338612471_n.jpg',
-      '10696261_694719080583286_1935969984063605957_n (1).jpg',
-      '1185858_523067557765427_822183869_n.jpg',
-      '1186264_628910547129871_1014328744_n.jpg',
-      '1236972_533113756743820_1525563638_n.jpg',
-      '1270605_400494403411130_871812786_o.jpg',
-      '1270795_636533359700923_534555566_o.jpg',
-      '1377330_529549663786921_1710321252_n.jpg',
-      '1392748_356593434478186_1053841925_n.jpg',
-      '183dfef303812f22ef8a6cdec968d238.jpg',
-      '2013-11-21 12.27.41.jpg',
-      '2013-11-21 12.29.36.jpg',
-      '2013-11-21 12.31.27.jpg',
-      '2014-09-10 11.20.26.jpg',
-      '2LB-House-by-Raphaël-Nussbaumer-Architectes-01.jpg',
-      '3731dbd21ad58476f8b8def8dd4ea60f.jpg',
-      '3842.jpg',
-      '3908.jpg',
-      '3999.jpg',
-      '4008.jpg',
-      '4038.jpg',
-      '4060.jpg',
-      '4065.jpg',
-      '4082.jpg',
-      '531116_485446544833872_2069607165_n.jpg',
-      '69017_514124231976106_128607971_n.jpg',
-      '870214f03d1eaa4b979ff46f6f4ea340.jpg',
-      '934792_748828568491572_3683997327546440355_n.jpg',
-      '9e415847efe69fb060683df2d5e2fdc4.jpg',
-      'AFGRI BYLS BRIDGE 038.jpg',
-      'AFGRI BYLS BRIDGE 043.jpg',
-      'AFGRI BYLS BRIDGE 048.jpg',
-      'AFGRI BYLS BRIDGE 066.jpg',
-      'AFGRI BYLS BRIDGE 089.jpg',
-      'Butterfly-Beach-by-Maienza-Wilson-16.jpg',
-      'Celadon-Villa-in-Koh-Samui-Thailand-08.jpg',
-      'DSCF0694.JPG',
-      'DSCF2039.JPG',
-      'DSCF2554.JPG',
-      'DSCF2555.JPG',
-      'DSCF2559.JPG',
-      'DSCF2562.JPG',
-      'DSCF3976.JPG',
-      'DSC_0076.JPG',
-      'IMG_20151021_100504.jpg',
-      'IMG_20151021_100548.jpg',
-      'IMG_20210418_142707.jpg',
-      'IMG_20210514_125458.jpg',
-      'IMG_20210602_091136.jpg',
-      'IMG_20210713_142445.jpg',
-      'IMG_20210805_165455.jpg',
-      'Lord Charles 001.jpg',
-      'Lord Charles 002.jpg',
-      'Lord Charles 003.jpg',
-      'Lord Charles 006.jpg',
-      'Lord Charles 008.jpg',
-      'Screenshot_20210805_215917_com.whatsapp_edit_72572909677987.jpg',
-      'Screenshot_20210805_215925_com.whatsapp_edit_72548424754554.jpg',
-      'Screenshot_20210805_215932_com.whatsapp_edit_72520528914454.jpg',
-      'Screenshot_20220904_150756_com.google.android.apps.photos_edit_82251476460365.jpg',
-      'WP_000018.jpg',
-      'WP_000019.jpg',
-      'WP_000032.jpg',
-      'WP_000038.jpg',
-      'WP_000046.jpg',
-      'Wonderboom 004.jpg',
-      'Wonderboom 007.jpg',
-      'Wonderboom 009.jpg',
-      'Wonderboom 033.jpg',
-      'e1c7b89e996c60b9e1811f8d238bb393.jpg',
-      'scaled0nb1bp.JPG',
-      'scaled9bhde1.JPG',
-      'scaled9ke7sh.JPG'
-    ];
-    const projectsGrid = document.querySelector('.projects-grid');
-    projectImages.forEach(file => {
-      const card = document.createElement('div');
-      card.className = 'project-card';
-      const img = document.createElement('img');
-      img.src = file;
-      img.alt = file.replace(/\.[^/.]+$/, '');
-      card.appendChild(img);
-      projectsGrid.appendChild(card);
-    });
-  </script>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script defer src="script.js"></script>
 </body>
 </html>
