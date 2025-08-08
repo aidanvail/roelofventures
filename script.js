@@ -101,18 +101,12 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 function createCard(file, index) {
   const card = document.createElement('div');
   card.className = 'project-card reveal';
-  const picture = document.createElement('picture');
-  const webpSource = document.createElement('source');
-  webpSource.type = 'image/webp';
-  webpSource.srcset = file.replace(/\.[^/.]+$/, '.webp');
   const img = document.createElement('img');
   img.src = file;
   img.alt = `Project image ${index + 1}`;
   img.loading = 'lazy';
   img.decoding = 'async';
-  picture.appendChild(webpSource);
-  picture.appendChild(img);
-  card.appendChild(picture);
+  card.appendChild(img);
   projectsGrid.appendChild(card);
   observer.observe(card);
 }
