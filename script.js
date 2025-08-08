@@ -76,7 +76,6 @@ const projectImages = [
   'construction-silhouette.jpg',
   'e1c7b89e996c60b9e1811f8d238bb393.jpg',
   'earthship2-625x377.jpg',
-  'logo3.jpg',
   'scaled0nb1bp.JPG',
   'scaled9bhde1.JPG',
   'scaled9ke7sh.JPG'
