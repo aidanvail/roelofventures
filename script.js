@@ -41,6 +41,7 @@ const projectImages = [
   'Celadon-Villa-in-Koh-Samui-Thailand-08.jpg',
   'DSCF0694.JPG',
   'DSCF2039.JPG',
+  'DSCF2073.JPG',
   'DSCF2554.JPG',
   'DSCF2555.JPG',
   'DSCF2559.JPG',
@@ -72,7 +73,10 @@ const projectImages = [
   'Wonderboom 007.jpg',
   'Wonderboom 009.jpg',
   'Wonderboom 033.jpg',
+  'construction-silhouette.jpg',
   'e1c7b89e996c60b9e1811f8d238bb393.jpg',
+  'earthship2-625x377.jpg',
+  'logo3.jpg',
   'scaled0nb1bp.JPG',
   'scaled9bhde1.JPG',
   'scaled9ke7sh.JPG'
@@ -94,28 +98,22 @@ const observer = new IntersectionObserver((entries, obs) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-function createCard(file) {
+function createCard(file, index) {
   const card = document.createElement('div');
   card.className = 'project-card reveal';
-  const picture = document.createElement('picture');
-  const webpSource = document.createElement('source');
-  webpSource.type = 'image/webp';
-  webpSource.srcset = file.replace(/\.[^/.]+$/, '.webp');
   const img = document.createElement('img');
   img.src = file;
-  img.alt = file.replace(/\.[^/.]+$/, '');
+  img.alt = `Project image ${index + 1}`;
   img.loading = 'lazy';
   img.decoding = 'async';
-  picture.appendChild(webpSource);
-  picture.appendChild(img);
-  card.appendChild(picture);
+  card.appendChild(img);
   projectsGrid.appendChild(card);
   observer.observe(card);
 }
 
 function loadImages() {
   const slice = projectImages.slice(imagesLoaded, imagesLoaded + imagesPerLoad);
-  slice.forEach(createCard);
+  slice.forEach((file, idx) => createCard(file, imagesLoaded + idx));
   imagesLoaded += slice.length;
   if (imagesLoaded >= projectImages.length) {
     loadMoreBtn.style.display = 'none';
