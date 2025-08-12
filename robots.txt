@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://aidanvail.github.io/roelofventures/sitemap.xml
